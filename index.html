@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>ATSADET</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+@import url("https://fonts.googleapis.com/css?family=Itim|Orbitron:400,900");
+body {
+    font-family: 'Itim', cursive;
+    font-family: 'Orbitron', sans-serif;
+    background: #1e1e1e;
+}
+
+.Atsadet {
+    font-family: 'Itim', cursive;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    position: relative;
+    display: inline-block;
+    padding: 1.2em 2em;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.Atsadet::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: -webkit-linear-gradient(315deg, #47cf73, #fcd000);
+    background: linear-gradient(135deg, #47cf73, #fcd000);
+    border-radius: 4px;
+    -webkit-transition: box-shadow .5s ease, -webkit-transform .2s ease;
+    transition: box-shadow .5s ease, -webkit-transform .2s ease;
+    transition: box-shadow .5s ease, transform .2s ease;
+    transition: box-shadow .5s ease, transform .2s ease, -webkit-transform .2s ease;
+    will-change: transform;
+    box-shadow: 0 2px 5px rgb(247, 82, 3);
+    -webkit-transform: translateY(calc(var(--ty, 0) * 1px)) rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg)) translateZ(calc(var(--tz, -12) * 1px));
+    transform: translateY(calc(var(--ty, 0) * 1px)) rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg)) translateZ(calc(var(--tz, -12) * 1px));
+}
+
+.Atsadet:hover::before {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Atsadet::after {
+    position: relative;
+    display: inline-block;
+    content: attr(data-title);
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: -webkit-transform .2s ease;
+    transition: transform .2s ease;
+    transition: transform .2s ease, -webkit-transform .2s ease;
+    font-weight: bold;
+    letter-spacing: .01em;
+    -webkit-transform: translateY(calc(var(--ty, 0) * 1px)) rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg));
+    transform: translateY(calc(var(--ty, 0) * 1px)) rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg));
+}
+
+.Atsadet {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: perspective(800px);
+    transform: perspective(800px);
+}
+
+.btn-info {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    color: #a1e420 !important;
+    background-color: #5bc0de;
+    border-color: #a1e420;
+    margin: -45px 0px 29px 0px;
+    width: 250px;
+    height: 72px;
+    border-radius: 16px !important;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #333 !important;
+    border-color: #a1e420;
+}
+
+.btn-info:focus {
+    color: #fff;
+    background-color: #1e1e1e !important;
+    border-color: #a1e420;
+    border-radius: 1px !important;
+}
+
+.btn-warning {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    color: #a1e420 !important;
+    background-color: #5bc0de;
+    border-color: #a1e420;
+    margin-top: -20%;
+    width: 250px;
+    height: 72px;
+    border-radius: 16px !important;
+}
+
+.btn-warning:hover {
+    color: #1e1e1e;
+    background-color: #333 !important;
+    border-color: #a1e420;
+}
+
+.btn-warning:focus {
+    color: #fff;
+    background-color: #1e1e1e !important;
+    border-color: #a1e420;
+    border-radius: 1px !important;
+}
+
+.btn:hover,
+.btn:focus {
+    border: 1px solid #a1e420 !important;
+    background-color: #333 !important;
+    color: #000;
+}
+
+.glyphicon {
+    position: relative;
+    top: -84px !important;
+    padding-top: 15px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    color: #a1e420 !important;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 6px;
+    width: 74px;
+    height: 50px;
+    border: 2px solid;
+}
+
+.set-img {
+    margin-top: -142px;
+    border: 3px solid #fff;
+    border-radius: 49px;
+}
+
+.set-img:hover {
+    margin-top: -89px;
+    border: 3px solid #a1e420;
+    border-radius: 49px;
+    transform: translate(0px, -16px);
+}
+
+.txetlink {
+    font-size: 16px;
+    text-align: center;
+}
+
+.set-text_foot {
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+
+.set-text_head {
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+    background: -webkit-linear-gradient(#52cf6d, #f0d007);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.set-text_about {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    background: -webkit-linear-gradient(#eaeaea, #eaeaea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+
+}
+
+.set-winget {
+    font-size: 16px;
+    color: red !important;
+}
+
+/*-------------------------*/
+
+h3,
+h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;
+    font-size: 20px;
+    color: #111;
+}
+
+p {
+    color: # !important;
+}
+
+.text-center>a{
+      font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+
+a:hover {
+    text-decoration: none !important;
+    color: green !important;
+}
+
+
+.j{
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-decoration: none !important;
+    color: #fff !important;  
+   
+
+}
+.j>a{ 
+    font-family: 'Kanit', sans-serif;
+    font-size: 12px;
+    text-decoration: none !important;
+    color: #000 !important;    
+}
+
+
+
+li{
+        list-style: none !important;
+}
+.d-lond{
+        font-size: 14px;
+    border: 2px solid #a1e420;
+    color: #fff !important;
+    padding: 3px;
+    height: 34px;
+    border-radius: 8px;
+}
+
+
+
+.container {
+    padding: 80px 120px;
+}
+
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+}
+
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+.carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);   
+    width: 100%;
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+
+
+.bg-1 {
+    background: #1e1e1e;
+    color: #bdbdbd;
+}
+
+.bg-2 {
+    background: #fff;
+    color: #bdbdbd;
+}
+
+.bg-1 h3 {
+    color: #fff;
+}
+
+.bg-1 p {
+    font-style: italic;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+
+.btn:hover,
+.btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+}
+
+.modal-header,
+h4,
+.close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-header,
+.modal-body {
+    padding: 40px 50px;
+}
+
+.nav-tabs li a {
+    color: #777;
+}
+
+#googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.navbar {
+    font-family: 'Itim', cursive;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0;
+    background-color: rgba(45, 45, 48, 0);
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+    /* border-bottom: 1px solid #98d040; */
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: #a0f104 !important;
+}
+
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+.open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+}
+
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+.navbar-default.affix {
+    border-bottom: 1px solid #98d040 !important;
+   background-color: #102314;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.service-box {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.service-icon {
+    width: 100%;
+    height: 220px;
+    padding: 20px;
+    text-align: center;
+    transition: all .5s ease;
+}
+
+.service-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    height: 220px;
+    padding: 20px;
+    text-align: center;
+    transition: all .5s ease;
+    background-color: #474747;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform: translateY(110px) rotateX(-90deg);
+    -moz-transform: translateY(110px) rotateX(-90deg);
+    -ms-transform: translateY(110px) rotateX(-90deg);
+    -o-transform: translateY(110px) rotateX(-90deg);
+    transform: translateY(110px) rotateX(-90deg);
+}
+
+.service-box .service-icon .front-content {
+    position: relative;
+    top: 80px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.service-box .service-icon .front-content i {
+    font-size: 28px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.service-box .service-icon .front-content h3 {
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.service-box .service-content h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-box .service-content p {
+    font-size: 13px;
+    color: #b1b1b1;
+    margin: 0;
+}
+
+.set-text_head {
+    font-family: 'Kanit', sans-serif;
+    font-size: 21px;
+    background: -webkit-linear-gradient(#f5f5f5, #eae9e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.set-text_po {
+    font-family: 'Kanit', sans-serif;
+    font-size: 21px;
+    background: -webkit-linear-gradient(#1e1e1e, #1e1e1e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    width: 126px;
+}
+
+.top_po {
+    margin-top: -59px;
+}
+
+.service-box:hover .service-icon {
+    opacity: 0;
+    -webkit-transform: translateY(-110px) rotateX(90deg);
+    -moz-transform: translateY(-110px) rotateX(90deg);
+    -ms-transform: translateY(-110px) rotateX(90deg);
+    -o-transform: translateY(-110px) rotateX(90deg);
+    transform: translateY(-110px) rotateX(90deg);
+}
+
+.service-box:hover .service-content {
+    opacity: 1;
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    -ms-transform: rotateX(0);
+    -o-transform: rotateX(0);
+    transform: rotateX(0);
+}
+
+.text-1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+
+.set-text_ableft {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    background: -webkit-linear-gradient(#eaeaea, #eaeaea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+
+}
+
+.set-text_skill {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    background: -webkit-linear-gradient(#eaeaea, #eaeaea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+}
+.mar-top{
+    margin:85px 0px 0px ;
+
+}
+
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .btn-warning {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    color: #a1e420 !important;
+
+    border-color: #a1e420;
+    margin-top: -37%;
+    width: 250px;
+    height: 72px;
+    border-radius: 16px !important;
+}  
+.j {
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+    color: #fff !important;
+}
+
+.set-img {
+      margin-top: 0px;
+    border: 3px solid #fff;
+    border-radius: 49px;
+    margin-left: -310px;
+}
+.set-img:hover {
+display: none;
+
+}
+.mar-top{
+    margin:105px 0px 0px ;
+
+}
+
+}
+
+
+/* Portrait phones and smaller */
+@media (max-width: 767px) {
+.Atsadet {
+    font-family: 'Itim', cursive;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    position: relative;
+    display: inline-block;
+    padding: 3.2em 2em;
+    text-decoration: none;
+    margin-bottom: 14px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mar-top {
+    margin: 14px 0px 0px;
+}
+
+.btn-info {
+   font-family: 'Kanit', sans-serif;
+    font-size: 15px;
+    color: #a1e420 !important;
+    background-color: #5bc0de;
+    border-color: #a1e420;
+    margin-top: -66%;
+     width: 250px; 
+    height: 52px;
+    border-radius: 16px !important;
+
+}
+
+.btn-info {
+
+    background-color: #1e1e1e;
+}
+
+.btn-warning {
+    font-family: 'Kanit', sans-serif;
+    font-size: 15px;
+    color: #a1e420 !important;
+    background-color: #5bc0de;
+    border-color: #a1e420;
+    margin-top: -197px;
+     width: 291px; 
+    height: 52px;
+    border-radius: 16px !important;
+}
+.btn-warning {
+
+    background-color: #1e1e1e;
+}
+
+.container {
+   padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.set-text_po {
+    font-family: 'Kanit', sans-serif;
+    font-size: 21px;
+    background: -webkit-linear-gradient(#1e1e1e, #1e1e1e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    right: -72px;
+}
+
+.j {
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none !important;
+    color: #fff !important;
+    text-align: center;
+}
+
+.set-img {
+    margin-top: 5px;
+    border: 3px solid #fff;
+    border-radius: 49px;
+}
+.set-img:hover {
+display: none;
+
+}
+
+.set-text_foot {
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    /* margin-bottom: 59px; */
+    padding: 15px;
+}
+
+}
+
+
+
+
+</style>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">ATSADET</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li><a href="#myPage">PORTFOLIO</a></li>
+                    <li><a href="#Portfolio">SKILL</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+
+                 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="mar-top"></div>
+    <!-- Container (The Band Section) -->
+    <div id="home" class="bg-1">
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="Atsadet" data-title="ATSADET"></div>
+            </div>
+            <div class="col-sm-6">
+                <p class="text-center set-text_head">ชอบการพัฒนาเว็บไซต์ และสร้างธีมในรูปแบบใหม่ๆ @atsadet hansamer
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- Container (TOUR Section) -->
+    <div class="bg-2">
+        <div class="container">
+            <button type="button" class="btn btn-warning">Portfolio</button>
+            <div class="row top_po">
+                <div class=" col-sm-offset-3 col-sm-9">
+                    <div class="col-sm-4">
+                       <a href="https://codepen.io/Atsadet/" target="_blank">
+                        <img src="https://lh3.googleusercontent.com/-pKgICGPzBV0/WBJHcxcRFXI/AAAAAAAAASc/ZiyluwfY4usJ7AaYK7Tc62l7PK_ThE7CQCLcB/h120/codepen.jpg" class="img-responsive  " alt="img-1" width="100%">
+                            <div class="txetlink text-center"><a href="https://codepen.io/Atsadet/" target="_blank">Codepen</a></div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="https://github.com/ATSADET" target="_blank">
+                        <img src="https://lh3.googleusercontent.com/-dzzbQOsPTMQ/WBJHdHTzeBI/AAAAAAAAASk/lZ6UtpLYYFMn7OYcSGYvUjuevcJhUpvJQCLcB/h120/git.jpg" class="img-responsive  " alt="img-1" width="100%">
+              
+                            <div class="txetlink text-center"><a>GitHub</a></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col-sm-offset-5 col-sm-6 set-text_po">ผลงาน </div>
+            <div class=" col-md-offset-2 col-md-9 col-sm-12 ">
+                <br>
+                <li class="j">
+                    <a href="http://www.vaninter.com/" target="_blank">WWW.VANINTER.COM</a>
+                    -
+                        <a href="http://www.rakphrae.com/" target="_blank">WWW.RAKPHRAE.COM</a>
+                        -
+                            <a href="https://www.wehavefund.com/" target="_blank">WWW.WEHAVEFUND.COM</a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div id="Portfolio" class="container">
+        <br>
+        <br>
+        <div class="col-lg-offset-4 col-lg-6  col-sm-offset-3 col-sm-6  ">
+            <button type="button" class="btn btn-info">Skill</button>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <i class="fa fa-trophy"></i>
+                            <h3>HTML</h3>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>HTML5</h3>
+                        <p class="text-1 "> Hypertext Markup Language เป็นภาษาประเภท Markup ที่ออกแบบมาเพื่อใช้ในการสร้างเว็บเพจ มีโครงสร้างการเขียนโดยอาศัยตัวกำกับ (Tag) ควบคุมการแสดงผลข้อความ รูปภาพ เสียง อื่นๆ ที่สามารถเรียกดูผ่านทางเว็บเบราว์เซอร์ได้ แต่ละ Tag สามารถระบุหรือควบคุมการแสดงผลของเว็บ ให้เป็นไปตามที่ผู้ออกแบบ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <i class="fa fa-trophy"></i>
+                            <h3>CSS</h3>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>CSS3/SCSS</h3>
+                        <p class="text-1">เขียนCSS เป็นหลัก รองลงมาคือเขียน CSS Preprocessor เพราะการเขียน CSS ในรูปแบบใหม่นี้เอง ที่ทำให้เราสามารถทำอะไรได้หลายๆ อย่าง และยังทำให้เรามีระเบียบในการเขียนโค้ดขึ้นอีีกด้วย
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <i class="fa fa-trophy"></i>
+                            <h3>JQUERY</h3>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>JQUERY</h3>
+                        <p class="text-1">ที่เลือกใช้เพราะ เร็วกว่า javascript ธรรมดาถึง 700% ง่ายในการเรียนรู้และใช้งาน มีปลั๊กอินให้เลือกใช้มาก รองรับข้ามบราวเซอร์ได้ดี 
+                         และฟังชั่นต่างๆของ Jquery ค่อนข้างครบ
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-box">
+                    <div class="service-icon yellow">
+                        <div class="front-content">
+                            <i class="fa fa-trophy"></i>
+                            <h3>Bootstrap</h3>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Bootstrap</h3>
+                        <p class="text-1">ฝั่ง Front-end Framework ผมจะใช้ Bootstrap3 ในการจัดการเว็บไซต์ เพราะจะช่วยให้การพัฒนาเว็บไซต์เร็วขึ้น ง่ายขึ้น และเป็นระบบมากขึ้น ซึ่งในที่นี้น่าจะหมายความว่า ถ้าเราใช้ Bootstrap แล้ว เราก็ไม่จำเป็นต้องไปหาอะไรมาเพิ่มอีก</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="service-box">
+                    <div class="service-icon orange">
+                        <div class="front-content">
+                            <i class="fa fa-anchor"></i>
+                            <h3>Wordpress</h3>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Wordpress</h3>
+                        <p class="text-1">สร้างธีม WordPress ในรูปแบบ Theme Option และ Customizer และเขียน php ประกอบธีมเข้ากับหลังบ้าน WordPress</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12" >
+                <div class="service-box ">
+                    <div class="service-icon red">
+                        <div class="front-content">
+                            <i class="fa fa-trophy"></i>
+                            <h3>WebDesing</h3>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Ps/Ai</h3>
+                        <p class="text-1">ขั้นตอนการออกแบบผมจะใช้ninjamock ร่างแบบ ตามด้วยHTMLสร้างโครสร้าง ต่อมาจัดรูปแบบทั้งเว็บด้วยCSS
+                        จะพยายลดการใช้ไฟล์กราฟฟิกให้มากที่สุด เพื่อความเร็วในการแสดงผล
+                      
+                        หลักๆชอบทำเว็บแนว Parallax style
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="contact" class="text-center">
+        <a class="up-arrow text-center" href="#myPage">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <br>
+        <div class="row">
+            <div class="col-sm-6 set-text_ableft ">
+                <b>“สิ่งที่วิเศษสุดสำหรับการเรียนรู้ คือไม่มีใครสามารถเอามันไปจากคุณได้.”</b> -บี.บี. คิง- (นักแต่งเพลง ชาวอเมริกัน)
+                <hr>
+                <p>ฟรี! โค้ดสำหรับนักพัฒนา </p>
+                <a class="d-lond" href="https://github.com/ATSADET/ATSADET-WEB_PAGE" target="_blank">
+            ดาวน์โหลด
+                </a>
+  
+
+            </div>
+            <div class="col-sm-6 ">
+                <div class="col-sm-10 set-text_foot">
+                    <p class="pull-right set-text_about "><b>Front-end & WordPress Developer </b>
+                        <br> ออกแบบและพัฒนาธีม WordPress
+                        <br> รักในการใช้เทคโนโลยีใหม่ๆอย่างสนุก<br>
+                        Atsadet.ha@gmail.com
+                        <br>
+                               lineID:100200700
+                    </p>
+                       
+                </div>
+                <div class="col-sm-offset-10 col-sm-2">
+                    <img src="https://lh3.googleusercontent.com/-3_0Tu27pqDc/WBJHdELdDrI/AAAAAAAAASg/gLiS-7pMz3Uxcrtyyhe2sLUdRLp762l3ACLcB/h120/a.jpg" class="set-img" width="100" height="100">
+                </div>
+            </div>
+        </div>
+        <br>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    'use strict';
+    var docStyle = document.documentElement.style;
+    var aElem = document.querySelector('.Atsadet');
+    aElem.onmousemove = function(e) {
+        var boundingClientRect = aElem.getBoundingClientRect();
+        var x = e.clientX - boundingClientRect.left;
+        var y = e.clientY - boundingClientRect.top;
+        var xc = boundingClientRect.width / 2;
+        var yc = boundingClientRect.height / 2;
+        var dx = x - xc;
+        var dy = y - yc;
+        docStyle.setProperty('--rx', dy / -1);
+        docStyle.setProperty('--ry', dx / 10);
+    };
+    aElem.onmouseleave = function(e) {
+        docStyle.setProperty('--ty', '0');
+        docStyle.setProperty('--rx', '0');
+        docStyle.setProperty('--ry', '0');
+    };
+    aElem.onmousedown = function(e) {
+        docStyle.setProperty('--tz', '-25');
+    };
+    document.Atsadet.onmouseup = function(e) {
+        docStyle.setProperty('--tz', '-12');
+    };
+    </script>
+    <script>
+    $(document).ready(function() {
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function() {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    })
+    </script>
+    <script>
+    (function($) {
+        "use strict"; // Start of use strict
+        // jQuery for page scrolling feature - requires jQuery Easing plugin
+        $('a.page-scroll').bind('click', function(event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: ($($anchor.attr('href')).offset().top - 50)
+            }, 1250, 'easeInOutExpo');
+            event.preventDefault();
+        });
+        // Highlight the top nav as scrolling occurs
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 100
+        });
+        // Closes the Responsive Menu on Menu Item Click
+        $('.navbar-collapse ul li a').click(function() {
+            $('.navbar-toggle:visible').click();
+        });
+        // Offset for Main Navigation
+        $('#mainNav').affix({
+            offset: {
+                top: 50
+            }
+        })
+    })(jQuery); // End of use strict
+    </script>
+</body>
+
+</html>
